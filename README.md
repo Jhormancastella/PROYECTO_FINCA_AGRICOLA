@@ -85,4 +85,16 @@ Correo: tu.correo@ejemplo.com
 
 Correo: tu.correo@ejemplo.com
 
+/tu-repositorio
+    ├── ddl.sql
+    ├── dml.sql
+    ├── dql_select.sql
+    ├── dql_procedimientos.sql
+    ├── dql_funciones.sql
+    ├── dql_triggers.sql
+    ├── dql_eventos.sql
+    ├── README.md
+    ├── diagrama.jpg
+    ├── diagramaER.jpg
+    ├── diagramaET.jpg
 
