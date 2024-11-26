@@ -84,17 +84,21 @@ Para cualquier consulta sobre el proyecto, por favor contacta a:
 Correo: tu.correo@ejemplo.com
 
 Correo: tu.correo@ejemplo.com
-
+```sql
+---------------
 /tu-repositorio
-    ├── ddl.sql
-    ├── dml.sql
-    ├── dql_select.sql
-    ├── dql_procedimientos.sql
-    ├── dql_funciones.sql
-    ├── dql_triggers.sql
-    ├── dql_eventos.sql
+    ├── ddl.sql creacion de las tablas y base de datos
+    ├── dml.sql introduccion de las inserciones 
+----consultas
+    ├── dql_select.sql -- echo 
+    ├── dql_procedimientos.sql --echo
+    ├── dql_funciones.sql -- echo
+    ├── dql_triggers.sql -- 
+------------
     ├── README.md
+-------------
     ├── diagrama.jpg
     ├── diagramaER.jpg
     ├── diagramaET.jpg
-
+--------------
+```
