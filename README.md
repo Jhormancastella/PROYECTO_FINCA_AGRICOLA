@@ -72,18 +72,17 @@ Mantenimiento: Acceso a información sobre maquinaria y mantenimiento.
 
 Jhorman Jesus castellanos Morales: Diseño de la base de datos y tablas.
 
-Adrian Perez : Implementación de procedimientos y funciones.
+Jaider Adrian Perez Vega : Implementación de procedimientos y funciones.
 
-Pedro Martínez: Documentación y pruebas del sistema.
 
 
 ## Contacto
 
 Para cualquier consulta sobre el proyecto, por favor contacta a:
 
-Correo: tu.correo@ejemplo.com
+Correo: jesusjhorman123@gmail.com
 
-Correo: tu.correo@ejemplo.com
+Correo: perezjaider473@gmail.com
 ```sql
 ---------------
 /tu-repositorio
