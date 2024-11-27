@@ -85,19 +85,18 @@ Correo: jesusjhorman123@gmail.com
 Correo: perezjaider473@gmail.com
 ```sql
 ---------------
-/tu-repositorio
-    ├── ddl.sql creacion de las tablas y base de datos --echo
+tu-repositorio
+    ├── ddl.sql -- creacion de las tablas y base de datos --echo
     ├── dml.sql introduccion de las inserciones -- echo
 ----consultas
-    ├── dql_select.sql -- echo 
-    ├── dql_procedimientos.sql --echo
-    ├── dql_funciones.sql -- echo
-    ├── dql_triggers.sql -- 
+    ├── dql_select.sql -- las 100 primeras consultas subconsultas-- echo 
+    ├── dql_procedimientos.sql -- los 20 procedimientos --echo
+    ├── dql_funciones.sql -- las 20 funciones -- echo
+    ├── dql_triggers.sql -- los 20 triggers-- echo
 ------------
-    ├── README.md
+    ├── README.md -- echo
 -------------
-    ├── diagrama.jpg
-    ├── diagramaER.jpg
-    ├── diagramaET.jpg
+    ├── diagramaER.jpg -- echo
+    ├── diagramaEA.jpg -- echo
 --------------
 ```
