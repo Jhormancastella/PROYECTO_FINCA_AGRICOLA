@@ -1,13 +1,16 @@
 -- Inserciones en la tabla Ubicacion
+
 INSERT INTO Ubicacion (descripcion, latitud, longitud) 
 VALUES ('Ubicación Ejemplo', 9.123456, -84.123456);
 
 -- Inserciones en la tabla Finca
+
 INSERT INTO Finca (nombre, area_total_hectareas, altitud_msnm, tipo_clima, fecha_registro, descripcion, datos_contacto, estado, id_ubicacion)
 VALUES
     ('Finca Diversa', 250.75, 1200.00, 'Subtropical', '2023-01-15', 'Finca dedicada a la producción diversificada de café, frutas tropicales, cacao, y verduras de altura.', 'Tel: 555-1234, Email: contacto@fincadiversa.com', 'Activa', 1);
 
 -- Inserciones en la tabla CertificacionesFinca 
+
 INSERT INTO CertificacionesFinca (id_finca, nombre_certificacion, fecha_obtencion)
 VALUES
     (1, 'Certificación Orgánica', '2023-06-01'),
@@ -15,6 +18,7 @@ VALUES
     (1, 'Global GAP', '2022-11-20');
 
 -- Inserciones en la tabla Sectores
+
 INSERT INTO Sectores (id_finca, codigo_sector, nombre_sector, area_hectareas, tipo_suelo, ubicacion_especifica, estado, ph_suelo, pendiente_terreno, sistema_riego, observaciones, fecha_ultimo_uso)
 VALUES
     (1, 'A01', 'Sector Café', 50.00, 'Arcilloso', 'Zona Norte', 'Activo', 6.5, 'Moderada', 'Goteo', 'Cultivo de café robusta y arábiga.', '2023-11-15'),
@@ -24,6 +28,7 @@ VALUES
     (1, 'E05', 'Sector Cacao', 35.00, 'Franco', 'Zona Central', 'Activo', 6.3, 'Ligera', 'Goteo', 'Producción de cacao fino de altura.', '2024-01-15');
     
 -- Inserciones en la tabla TiposEmpleados
+
 INSERT INTO TiposEmpleados (nombre_cargo)
 VALUES
     ('Fornalero'),
@@ -77,6 +82,7 @@ VALUES
     ('Técnico en Relaciones Comerciales');
     
  -- Inserciones en la tabla EstadosMaquinaria
+
 INSERT INTO EstadosMaquinaria (descripcion)
 VALUES
     ('Activo'),
@@ -84,6 +90,7 @@ VALUES
     ('En Reparación');
 
 -- Inserciones en la tabla TiposProductos
+
 INSERT INTO TiposProductos (nombre)
 VALUES
     ('Frutas'),
@@ -137,6 +144,7 @@ VALUES
     ('Plantas Bioindicadoras');
 
 -- Inserciones en la tabla UnidadesMedida
+
 INSERT INTO UnidadesMedida (nombre, abreviatura)
 VALUES
     ('Kilogramos', 'kg'),
@@ -146,6 +154,7 @@ VALUES
     ('Unidades', 'u');
 
 -- Inserciones en la tabla Empleados   
+
 INSERT INTO Empleados (nombre, apellido, fecha_nacimiento, id_tipo_empleado, fecha_contratacion, salario, estado)
 VALUES
 ('Juan', 'Pérez', '1985-03-12', 1, '2023-01-10', 1500.00, 'Activo'),
@@ -194,6 +203,7 @@ VALUES
     ('Mercedes', 'Vega', '1995-03-02', 3, '2022-06-17', 1475.00, 'Activo');
 
 -- Inserciones en la tabla EmpleadosContactos  
+
 INSERT INTO EmpleadosContactos (id_empleado, tipo_contacto, valor) VALUES
     (1, 'Teléfono', '3000000001'),
     (1, 'Email', 'juan.perez@example.com'),
@@ -328,6 +338,7 @@ INSERT INTO EmpleadosContactos (id_empleado, tipo_contacto, valor) VALUES
     (44, 'Email', 'mercedes.vega@example.com');
     
 -- Inserciones en la tabla Productos
+
 INSERT INTO Productos (nombre, id_tipo_producto, id_unidad_medida, descripcion)
 VALUES
 	('Tomates', 1, 1, 'Tomates frescos para ensaladas.'),
@@ -380,6 +391,7 @@ VALUES
     ('Hierba de limón', 1, 1, 'Hierba de limón fresca para infusiones.');
 
 -- Inserciones en la tabla Maquinaria
+
 INSERT INTO Maquinaria (nombre, modelo, año_compra, id_estado, fecha_ultimo_mantenimiento, proxima_revision)
 VALUES
     ('Tractor John Deere', 'JD2021', 2021, 1, '2023-07-01', '2024-01-15'),
@@ -433,6 +445,7 @@ VALUES
     ('Manta rotativa', 'MR2021', 2020, 1, '2023-02-15', '2024-04-15');
 
 -- Inserciones en la tabla Productos  
+
 INSERT INTO Productos (nombre, id_tipo_producto, id_unidad_medida, descripcion)
 VALUES
 	('Tomates', 1, 1, 'Tomates frescos para ensaladas.'),
@@ -485,6 +498,7 @@ VALUES
     ('Hierba de limón', 1, 1, 'Hierba de limón fresca para infusiones.');
     
 -- Inserciones en la tabla Maquinaria
+
 INSERT INTO Maquinaria (nombre, modelo, año_compra, id_estado, fecha_ultimo_mantenimiento, proxima_revision)
 VALUES
     ('Tractor John Deere', 'JD2021', 2021, 1, '2023-07-01', '2024-01-15'),
@@ -538,6 +552,7 @@ VALUES
     ('Manta rotativa', 'MR2021', 2020, 1, '2023-02-15', '2024-04-15');   
     
 -- Inserciones en la tabla Proveedores
+
 INSERT INTO Proveedores (nombre_empresa, contacto, estado)
 VALUES
     ('AgroSupply', 'Tel: 555-6789', 'Activo'),
@@ -588,6 +603,7 @@ VALUES
     ('Tecnología de Gestión Agrícola', 'Tel: 555-4321, Email: ventas@gestionagricola.com', 'Activo');
 
 -- Inserciones en la tabla Clientes
+
 INSERT INTO Clientes (nombre, apellido, empresa, estado)
 VALUES
     ('Carlos', 'López', 'Frutas del Sur', 'Activo'),
@@ -640,6 +656,7 @@ VALUES
     ('Yolanda', 'Araya', 'Tienda de Especialidades', 'Activo');
 
 -- Inserciones en la tabla ClientesContactos
+
 INSERT INTO ClientesContactos (id_cliente, tipo_contacto, valor)
 VALUES
     (1, 'Teléfono', '3000000001'),
@@ -788,6 +805,7 @@ VALUES
     (48, 'Dirección', 'Calle Ecología 145, Santander, Colombia');
     
 -- Inserciones en la tabla Insumos
+
 INSERT INTO Insumos (nombre, id_unidad_medida, stock_actual, stock_minimo, descripcion, estado)
 VALUES
     ('Fertilizante NPK', 1, 500.00, 100.00, 'Fertilizante de alta eficiencia.', 'Activo'),
@@ -838,6 +856,7 @@ VALUES
     ('Biocarbón', 1, 250.00, 60.00, 'Mejorador de suelos.', 'Activo');
 
 --Inserciones en la tabla ProveedoresInsumos
+
 INSERT INTO ProveedoresInsumos (id_proveedor, id_insumo)
 VALUES
     (1, 1),  -- Proveedor 1 ofrece Fertilizante NPK
@@ -888,6 +907,7 @@ VALUES
     (22, 46); -- Proveedor 22 ofrece Biocarbón
 
 --Inserciones en la tabla produccion
+
 INSERT INTO Produccion (id_finca, id_sector, id_producto, id_empleado, fecha_inicio, fecha_fin, cantidad_producida, estado_produccion, observaciones)
 VALUES
     (1, 1, 1, 1, '2023-01-10', '2023-01-20', 500.00, 'Finalizada', 'Producción de tomates.'),
@@ -915,6 +935,7 @@ VALUES
     (1, 2, 3, 2, '2023-08-15', NULL, 20.00, 'Planificada', 'Producción de lechugas');
 
 -- Inserciones en la tabla Ventas
+
 INSERT INTO Ventas (id_cliente, id_produccion, fecha_venta, cantidad, precio_unitario)
 VALUES
     (1, 1, '2023-09-01', 50.00, 2.00),   
@@ -922,6 +943,7 @@ VALUES
     (3, 3, '2023-09-03', 20.00, 2.50);
 
 --Inserciones en la tabla DetallesVenta   
+
 INSERT INTO DetallesVenta (id_venta, id_producto, cantidad, precio_unitario)
 VALUES
     (LAST_INSERT_ID(), 1, 50, 2.00),  
@@ -929,6 +951,7 @@ VALUES
     (LAST_INSERT_ID(), 3, 20, 2.50);
 
 --Inserciones en la tabla UsoInsumos 
+
 INSERT INTO UsoInsumos (id_produccion, id_insumo, cantidad, fecha_uso, observaciones)
 VALUES
     (1, 1, 100.00, '2023-08-10', 'Uso de fertilizante NPK para tomates'), 
@@ -936,6 +959,7 @@ VALUES
     (3, 3, 150.00, '2023-08-15', 'Uso de abono compost en lechugas');
 
 --Inserciones en la tabla UsoMaquinaria     
+
 INSERT INTO UsoMaquinaria (id_produccion, id_maquinaria, fecha_uso, horas_uso, observaciones)
 VALUES
     (1, 1, '2023-08-10', 5.0, 'Uso diario'),  
@@ -943,6 +967,7 @@ VALUES
     (2, 3, '2023-08-15', 4.5, 'Reparación'); 
 
 --Inserciones en la tabla ContactoProveedores
+
 INSERT INTO ContactoProveedores (id_proveedor, tipo_contacto, valor)
 VALUES
     (1, 'Teléfono', 'Tel: 555-6789'),
