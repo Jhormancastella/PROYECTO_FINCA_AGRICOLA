@@ -86,8 +86,8 @@ Correo: perezjaider473@gmail.com
 ```sql
 ---------------
 /tu-repositorio
-    ├── ddl.sql creacion de las tablas y base de datos
-    ├── dml.sql introduccion de las inserciones 
+    ├── ddl.sql creacion de las tablas y base de datos --echo
+    ├── dml.sql introduccion de las inserciones -- echo
 ----consultas
     ├── dql_select.sql -- echo 
     ├── dql_procedimientos.sql --echo
