@@ -384,6 +384,6 @@ BEGIN
     LIMIT 1;
 
     RETURN id_producto;
-END $$
+END $$
 
-DELIMITER ;
+DELIMITER ;

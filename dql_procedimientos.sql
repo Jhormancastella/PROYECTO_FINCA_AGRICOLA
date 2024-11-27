@@ -427,7 +427,7 @@ BEGIN
 END //
 DELIMITER ;
 
-9. Procedimiento Almacenado para Obtener Ventas por Cliente
+-- 9. Procedimiento Almacenado para Obtener Ventas por Cliente
 
 DELIMITER //
 CREATE PROCEDURE ObtenerVentasPorCliente(
@@ -438,7 +438,7 @@ BEGIN
 END //
 DELIMITER ;
 
-10.Procedimiento Almacenado para Calcular Total Ventas
+-- 10.Procedimiento Almacenado para Calcular Total Ventas
 
 DELIMITER //
 CREATE PROCEDURE CalcularTotalVentas()
@@ -447,7 +447,7 @@ BEGIN
 END //
 DELIMITER ;
 
-11. Procedimiento Almacenado para Listar Empleados Activos
+-- 11. Procedimiento Almacenado para Listar Empleados Activos
 
 DELIMITER //
 CREATE PROCEDURE ListarEmpleadosActivos()
@@ -456,7 +456,7 @@ BEGIN
 END //
 DELIMITER ;
 
-12. Procedimiento Almacenado para Obtener Proveedores Activos
+-- 12. Procedimiento Almacenado para Obtener Proveedores Activos
 
 DELIMITER //
 CREATE PROCEDURE ListarProveedoresActivos()
@@ -465,7 +465,7 @@ BEGIN
 END //
 DELIMITER ;
 
-13. Procedimiento Almacenado para Actualizar Stock de Insumos
+-- 13. Procedimiento Almacenado para Actualizar Stock de Insumos
 
 DELIMITER //
 CREATE PROCEDURE ActualizarStockInsumos(
@@ -479,7 +479,7 @@ BEGIN
 END //
 DELIMITER ;
 
-14. Procedimiento Almacenado para Grabar Auditoría
+-- 14. Procedimiento Almacenado para Grabar Auditoría
 
 DELIMITER //
 CREATE PROCEDURE GrabarAuditoria(
@@ -497,7 +497,7 @@ BEGIN
 END //
 DELIMITER ;
 
-15. Procedimiento para Registrar Uso de Insumos
+-- 15. Procedimiento para Registrar Uso de Insumos
 
 DELIMITER //
 CREATE PROCEDURE RegistrarUsoInsumos(
@@ -512,7 +512,7 @@ BEGIN
 END //
 DELIMITER ;
 
-16. Procedimiento para Registrar Uso de Maquinaria
+-- 16. Procedimiento para Registrar Uso de Maquinaria
 
 DELIMITER //
 CREATE PROCEDURE RegistrarUsoMaquinaria(
@@ -527,7 +527,7 @@ BEGIN
 END //
 DELIMITER ;
 
-17. Procedimiento para Listar Inventario Bajo
+-- 17. Procedimiento para Listar Inventario Bajo
 
 DELIMITER //
 CREATE PROCEDURE ListarInventarioBajo()
@@ -536,7 +536,7 @@ BEGIN
 END //
 DELIMITER ;
 
-18. Procedimiento para Crear un Reporte de Producción
+-- 18. Procedimiento para Crear un Reporte de Producción
 
 DELIMITER //
 CREATE PROCEDURE ReporteProduccionPorFecha(
@@ -549,7 +549,7 @@ BEGIN
 END //
 DELIMITER ;
 
-19. Procedimiento para Buscar Clientes por Nombre
+-- 19. Procedimiento para Buscar Clientes por Nombre
 
 DELIMITER //
 CREATE PROCEDURE BuscarClientesPorNombre(
@@ -560,7 +560,7 @@ BEGIN
 END //
 DELIMITER ;
 
-20. Procedimiento para Actualizar Datos de un Proveedor
+-- 20. Procedimiento para Actualizar Datos de un Proveedor
 
 DELIMITER //
 CREATE PROCEDURE ActualizarProveedor(
@@ -578,4 +578,4 @@ BEGIN
 END //
 DELIMITER ;
 
-SHOW PROCEDURE STATUS WHERE Db = 'Agricola';
+SHOW PROCEDURE STATUS WHERE Db = 'Agricola';
