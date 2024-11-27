@@ -1,6 +1,6 @@
 -- Crear usuario Administrador
 CREATE USER 'useradmin'@'localhost' IDENTIFIED BY '123';
-GRANT ALL PRIVILEGES ON Agricola.* TO 'useradmin'@'localhost'; -- Acceso total a toda la base de datos
+GRANT ALL PRIVILEGES ON Agricola.* TO 'useradmin'@'localhost';
 FLUSH PRIVILEGES;
 
 -- Crear usuario Contador
