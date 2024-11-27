@@ -240,4 +240,42 @@ CREATE TABLE Auditoria (
     valor_antiguo VARCHAR(255),
     valor_nuevo VARCHAR(255)
 ); 
+
+CREATE TABLE Roles (
+    id_rol INT PRIMARY KEY AUTO_INCREMENT,
+    nombre_rol VARCHAR(50) NOT NULL UNIQUE,
+    descripcion TEXT
+);
+
+CREATE TABLE Permisos (
+    id_permiso INT PRIMARY KEY AUTO_INCREMENT,
+    nombre_permiso VARCHAR(50) NOT NULL UNIQUE,
+    descripcion TEXT
+);
+
+CREATE TABLE Usuarios (
+    id_usuario INT PRIMARY KEY AUTO_INCREMENT,
+    nombre_usuario VARCHAR(50) NOT NULL UNIQUE,
+    contraseña VARCHAR(255) NOT NULL, -- Se recomienda almacenar encriptada
+    estado ENUM('Activo', 'Inactivo') DEFAULT 'Activo',
+    id_empleado INT,
+    FOREIGN KEY (id_empleado) REFERENCES Empleados(id_empleado)
+);
+
+CREATE TABLE Usuarios_Roles (
+    id_usuario INT NOT NULL,
+    id_rol INT NOT NULL,
+    PRIMARY KEY (id_usuario, id_rol),
+    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario),
+    FOREIGN KEY (id_rol) REFERENCES Roles(id_rol)
+);
+
+CREATE TABLE Roles_Permisos (
+    id_rol INT NOT NULL,
+    id_permiso INT NOT NULL,
+    PRIMARY KEY (id_rol, id_permiso),
+    FOREIGN KEY (id_rol) REFERENCES Roles(id_rol),
+    FOREIGN KEY (id_permiso) REFERENCES Permisos(id_permiso)
+);
+
 show tables;
