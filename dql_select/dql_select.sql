@@ -44,7 +44,7 @@ GROUP BY te.nombre_cargo;
 
 -- Listar empleados activos con su salario
 
-SELECT id_emnombre, apellido, salario 
+SELECT id_empleado,nombre, apellido, salario 
 FROM Empleados 
 WHERE estado = 'Activo';
 
@@ -53,14 +53,14 @@ WHERE estado = 'Activo';
 SELECT id_empleado, nombre, apellido, salario 
 FROM Empleados 
 ORDER BY salario DESC 
-LIMIT ;
+LIMIT 2;
 
 -- Buscar empleados por nombre o apellido
 
 SELECT id_empleado, nombre, apellido 
 FROM Empleados 
 WHERE nombre LIKE '%Juan%' OR apellido LIKE '%Pérez%';  -- Ejemplo de búsqueda
-Consultas sobre Insumos
+
 
 -- Listar insumos con bajo stock mínimo
 
@@ -79,7 +79,7 @@ WHERE estado = 'Activo';
 SELECT estado, COUNT(*) AS total_insumos 
 FROM Insumos 
 GROUP BY estado;
-Buscar insumos por nombre:
+
 
 SELECT id_insumo, nombre 
 FROM Insumos 
@@ -90,8 +90,7 @@ WHERE nombre LIKE '%fertilizante%';  -- Búsqueda de ejemplo
 SELECT i.id_insumo, i.nombre, um.nombre AS unidad_medida 
 FROM Insumos i 
 JOIN UnidadesMedida um ON i.id_unidad_medida = um.id_unidad;
-Consultas sobre Proveedores
-Listar todos los proveedores activos:
+
 
 SELECT id_proveedor, nombre_empresa, estado 
 FROM Proveedores 
@@ -120,7 +119,7 @@ JOIN ContactoProveedores cp ON p.id_proveedor = cp.id_proveedor;
 SELECT id_proveedor, tipo_contacto, valor 
 FROM ContactoProveedores 
 WHERE id_proveedor = 1;  -- Cambia el ID del proveedor según necesidad
-Consultas sobre Producción
+
 
 -- Listar producción por finca y sector
 
@@ -155,7 +154,7 @@ FROM Produccion p
 JOIN Finca f ON p.id_finca = f.id_finca 
 JOIN Sectores s ON p.id_sector = s.id_sector 
 WHERE p.estado_produccion = 'Planificada';
-Consultas sobre Ventas
+
 
 -- Listar todas las ventas y sus clientes
 
@@ -210,6 +209,7 @@ SELECT i.nombre, u.cantidad
 FROM UsoInsumos u 
 JOIN Insumos i ON u.id_insumo = i.id_insumo 
 WHERE u.id_produccion = 1;  -- Cambiar el ID de la producción según necesidad
+
 -- Uso de maquinaria para producción específica
 
 SELECT m.nombre, um.horas_uso 
@@ -219,10 +219,11 @@ WHERE um.id_produccion = 1;  -- Cambiar el ID de la producción según necesidad
 
 -- Listar maquinaria que no se usa actualmente
 
-SELECT id_maquinaria, nombre, estado 
+SELECT id_maquinaria, nombre, estadosmaquinaria.descripcion estado
 FROM Maquinaria 
-WHERE id_estado = 2;  -- Inactivo
-Consultas sobre Auditoría
+inner join estadosmaquinaria on maquinaria.id_estado = estadosmaquinaria.id_estado
+WHERE estadosmaquinaria.id_estado = 2;  -- Inactivo
+
 
 -- Listar entradas de auditoría recientes
 
@@ -255,14 +256,14 @@ SELECT *
 FROM Auditoria 
 WHERE tabla_afectada = 'Insumos'
 ORDER BY fecha DESC;
-Consultas combinadas y más complejas
+
 
 -- Producción total y total vendido por producto
 
 SELECT p.nombre, SUM(pr.cantidad_producida) AS total_producido, SUM(v.cantidad) AS total_vendido 
 FROM Productos p 
 LEFT JOIN Produccion pr ON p.id_producto = pr.id_producto 
-LEFT JOIN Ventas v ON p.id_producto = v.id_producto 
+LEFT JOIN Ventas v ON pr.id_produccion = v.id_produccion
 GROUP BY p.id_producto;
 
 -- Total de ingresos y costos por finca
@@ -282,7 +283,7 @@ GROUP BY f.id_finca, mes;
 
 -- Resumen de insumos y sus proveedores
 
-SELECT i.nombre AS insumo, p.nombre_empresa, u.cantidad AS cantidad
+SELECT i.nombre AS insumo, p.nombre_empresa
 FROM Insumos i 
 JOIN ProveedoresInsumos pi ON i.id_insumo = pi.id_insumo 
 JOIN Proveedores p ON pi.id_proveedor = p.id_proveedor;
@@ -312,16 +313,11 @@ SELECT AVG(cantidad) AS media_vendida
 FROM Ventas;
 -- Total de productos y su estado:
 
-SELECT estado, COUNT(*) AS total_productos 
-FROM Productos 
-GROUP BY estado;
+SELECT estado_produccion, COUNT(*) AS total_productos 
+FROM Produccion   
+INNER JOIN Productos ON Produccion.id_producto = Productos.id_producto 
+GROUP BY estado_produccion;
 
--- Resumen de ventas por cliente y por tipo de producto:
-
-SELECT cliente, tipo_producto, SUM(cantidad) AS total_vendido 
-FROM Ventas v 
-JOIN Productos p ON v.id_producto = p.id_producto 
-GROUP BY cliente, tipo_producto;
 
 -- Consultas adicionales ltimas certificaciones obtenidas por una finca:
 
@@ -360,7 +356,7 @@ SELECT m.nombre, m.estado, COUNT(um.id_uso) AS total_usos
 FROM Maquinaria m 
 LEFT JOIN UsoMaquinaria um ON m.id_maquinaria = um.id_maquinaria 
 GROUP BY m.id_maquinaria;
-Más consultas
+
 
 -- Último uso de cada tipo de maquinaria:
 
@@ -635,7 +631,7 @@ LEFT JOIN Produccion pr ON p.id_producto = pr.id_producto
 LEFT JOIN Ventas v ON p.id_producto = v.id_producto 
 GROUP BY tp.id_tipo_producto;
 
-Consultas de auditoría específicas por fecha: pendientes para modificar y ajustar y quitar el * 
+-- Consultas de auditoría específicas por fecha:
 
 SELECT * 
 FROM Auditoria 
@@ -662,7 +658,7 @@ GROUP BY i.id_insumo;
 
 -- Promedio de producción por sector en una finca específica:
 
-sql SELECT s.nombre_sector, AVG(pr.cantidad_producida) AS promedio_produccion FROM Sectores s JOIN Produccion pr ON s.id_sector = pr.id_sector WHERE pr.id_finca = 1 -- Cambia el ID según la finca deseada GROUP BY s.id_sector;
+SELECT s.nombre_sector, AVG(pr.cantidad_producida) AS promedio_produccion FROM Sectores s JOIN Produccion pr ON s.id_sector = pr.id_sector WHERE pr.id_finca = 1 ;
 
 
 -- Contar el número de empleados activos por tipo:

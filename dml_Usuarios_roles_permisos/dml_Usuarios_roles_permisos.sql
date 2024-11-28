@@ -32,15 +32,15 @@ GRANT SELECT, INSERT, UPDATE ON Agricola.usomaquinaria TO 'usersupervisor'@'loca
 FLUSH PRIVILEGES;
 
 -- Aplicar cambios
-FLUSH PRIVILEGES;
+-- FLUSH PRIVILEGES;
 
-revoke all privileges on . from 'useradmin'@'localhost';
-flush privileges;
+-- revoke all privileges on . from 'useradmin'@'localhost';
+-- flush privileges;
 
 SELECT User, Host FROM mysql.user;
 
-DROP USER 'useradmin'@'localhost';
-DROP USER 'usercontador'@'localhost';
-DROP USER 'uservendedor'@'localhost';
-DROP USER 'userencargado'@'localhost';
-DROP USER 'usersupervisor'@'localhost';
+-- DROP USER 'useradmin'@'localhost';
+-- DROP USER 'usercontador'@'localhost';
+-- DROP USER 'uservendedor'@'localhost';
+-- DROP USER 'userencargado'@'localhost';
+-- DROP USER 'usersupervisor'@'localhost';
