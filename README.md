@@ -13,24 +13,36 @@ El objetivo del proyecto es diseñar y desarrollar una base de datos que permita
 3. **Ejecutar consultas**: Utilizar los archivos `dql_select.sql`, `dql_procedimientos.sql`, `dql_funciones.sql`, `dql_triggers.sql`, para ejecutar los procedimientos, funciones, triggers que se han creado.
 
 ## Estructura de la Base de Datos
-- **Ubicacion**: Almacena las ubicaciones de las fincas.
-- **Finca**: Información general de cada finca.
-- **TiposEmpleados**: Clasificación de tipos de empleados.
-- **EstadosMaquinaria**: Estados posibles para la maquinaria.
-- **TiposProductos**: Clasificación de tipos de productos.
-- **UnidadesMedida**: Unidades de medida para los insumos.
-- **Empleados**: Datos de los empleados.
-- **EmpleadosContactos**: Información de contacto para cada empleado.
-- **Maquinaria**: Información sobre la maquinaria utilizada en la finca.
-- **Insumos**: Insumos disponibles para las operaciones.
-- **Proveedores**: Datos sobre proveedores y sus contactos.
-- **Produccion**: Información sobre la producción agrícola.
-- **Ventas**: Registro de las ventas realizadas.
-- **Clientes**: Datos de los clientes.
-- **DetallesVenta**: Detalles de cada venta.
-- **UsoInsumos**: Registro del uso de insumos en producción.
-- **UsoMaquinaria**: Registro del uso de maquinaria en producción.
-- **Auditoria**: Registro de cambios en las tablas.
+
+1. **Ubicacion**: Almacena las ubicaciones de las fincas.
+2. **Finca**: Información general de la finca.
+3. **TiposEmpleados**: Clasificación de tipos de empleados.
+4. **EstadosMaquinaria**: Estados posibles para la maquinaria.
+5. **TiposProductos**: Clasificación de tipos de productos.
+6. **UnidadesMedida**: Unidades de medida para los insumos.
+7. **Empleados**: Datos de los empleados.
+8. **EmpleadosContactos**: Información de contacto para cada empleado.
+9. **Maquinaria**: Información sobre la maquinaria utilizada en la finca.
+10. **Insumos**: Insumos disponibles para las operaciones.
+11. **Proveedores**: Datos sobre proveedores y sus contactos.
+12. **ContactoProveedores**: Información de contacto para los proveedores.
+13. **ProveedoresInsumos**: Relación entre proveedores e insumos.
+14. **Sectores**: Información sobre los sectores dentro de las fincas.
+15. **CertificacionesFinca**: Certificaciones obtenidas por las fincas.
+16. **Productos**: Información sobre los productos disponibles.
+17. **Produccion**: Información sobre la producción agrícola.
+18. **UsoInsumos**: Registro del uso de insumos en producción.
+19. **UsoMaquinaria**: Registro del uso de maquinaria en producción.
+20. **Clientes**: Datos de los clientes.
+21. **ClientesContactos**: Información de contacto para cada cliente.
+22. **Ventas**: Registro de las ventas realizadas.
+23. **DetallesVenta**: Detalles de cada venta.
+24. **Auditoria**: Registro de cambios en las tablas.
+25. **Roles**: Rol del usuario en el sistema.
+26. **Permisos**: Permisos asignados a los roles.
+27. **Usuarios**: Información sobre los usuarios del sistema.
+28. **Usuarios_Roles**: Relación entre usuarios y roles.
+29. **Roles_Permisos**: Relación entre roles y permisos.
 
 ## Ejemplos de Consultas
 ```sql
@@ -84,19 +96,16 @@ Correo: jesusjhorman123@gmail.com
 
 Correo: perezjaider473@gmail.com
 ```sql
----------------
-tu-repositorio
-    ├── ddl.sql -- creacion de las tablas y base de datos --echo
-    ├── dml.sql introduccion de las inserciones -- echo
-----consultas
-    ├── dql_select.sql -- las 100 primeras consultas subconsultas-- echo 
-    ├── dql_procedimientos.sql -- los 20 procedimientos --echo
-    ├── dql_funciones.sql -- las 20 funciones -- echo
-    ├── dql_triggers.sql -- los 20 triggers-- echo
-------------
-    ├── README.md -- echo
--------------
-    ├── diagramaER.jpg -- echo
-    ├── diagramaEA.jpg -- echo
---------------
+---------------------------------------------------------------------------
+repositorio
+    ├── ddl.sql -- creacion de las tablas y base de datos 
+    ├── dml.sql introduccion de las inserciones 
+    ├── dql_select.sql -- las 100 primeras consultas subconsultas
+    ├── dql_procedimientos.sql -- los 20 procedimientos 
+    ├── dql_funciones.sql -- las 20 funciones
+    ├── dql_triggers.sql -- los 20 triggers
+    ├── README.md 
+    ├── diagramaER.jpg 
+    ├── diagramaEA.jpg 
+--------------------------------------------------------------------------
 ```
